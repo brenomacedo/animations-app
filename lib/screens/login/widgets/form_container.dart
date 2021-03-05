@@ -1,3 +1,4 @@
+import 'package:animation_app/screens/login/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 
 class FormContainer extends StatelessWidget {
@@ -8,7 +9,16 @@ class FormContainer extends StatelessWidget {
       child: Form(
         child: Column(
           children: [
-            
+            InputField(
+              hint: "Username",
+              obscure: false,
+              icon: Icons.person_outline,
+            ),
+            InputField(
+              hint: "Password",
+              obscure: true,
+              icon: Icons.lock_outline,
+            )
           ],
         ),
       ),
