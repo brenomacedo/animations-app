@@ -33,25 +33,28 @@ class StaggerAnimation extends StatelessWidget {
         onTap: () {
           controller.forward();
         },
-        child: buttonZoomOut.value <= 60 ?
-          Container(
-            width: buttonSqueeze.value,
-            height: 60,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(247, 64, 106, 1.0),
-              borderRadius: BorderRadius.all(Radius.circular(30.0))
+        child: Hero(
+          tag: "fade",
+          child: buttonZoomOut.value == 60 ?
+            Container(
+              width: buttonSqueeze.value,
+              height: 60,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(247, 64, 106, 1.0),
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
+              child: _buildInside(context),
+            ) :
+            Container(
+              width: buttonZoomOut.value,
+              height: buttonZoomOut.value,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(247, 64, 106, 1.0),
+                shape: buttonZoomOut.value < 500 ? BoxShape.circle : BoxShape.rectangle
+              )
             ),
-            child: _buildInside(context),
-          ) :
-          Container(
-            width: buttonZoomOut.value,
-            height: buttonZoomOut.value,
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(247, 64, 106, 1.0),
-              shape: buttonZoomOut.value < 500 ? BoxShape.circle : BoxShape.rectangle
-            )
-          )
+        )
       ),
     );
   }

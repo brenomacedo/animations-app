@@ -32,7 +32,7 @@ class HomeTop extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage('images/perfil.jpg'),
+                  image: AssetImage('images/profile.jpg'),
                   fit: BoxFit.cover
                 ),
               ),
