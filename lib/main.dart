@@ -1,4 +1,3 @@
-import 'package:animation_app/screens/home/home_screen.dart';
 import 'package:animation_app/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
